@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LITTERA（リテラ） - 大切な想いを、確実に未来へ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Yu Gothic Medium', '游ゴシック Medium', YuGothic, '游ゴシック体', 'Meiryo', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: drift 20s linear infinite;
+        }
+        
+        @keyframes drift {
+            from { transform: translate(0, 0); }
+            to { transform: translate(50px, 50px); }
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 1;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+        }
+        
+        .tagline {
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            text-shadow: 1px 1px 10px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        section {
+            padding: 5rem 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2d3748;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        
+        .about {
+            background: linear-gradient(180deg, #f7fafc 0%, #edf2f7 100%);
+        }
+        
+        .about-content {
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #4a5568;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .problems {
+            background: white;
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .problem-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .problem-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .features {
+            background: linear-gradient(180deg, #edf2f7 0%, #e2e8f0 100%);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid #667eea;
+        }
+        
+        .feature-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+        
+        .feature-card p {
+            color: #718096;
+        }
+        
+        .users {
+            background: white;
+            text-align: center;
+        }
+        
+        .user-text {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #4a5568;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .age-range {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .age-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .company {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+        }
+        
+        .company h2 {
+            color: white;
+        }
+        
+        .company h2::after {
+            background: white;
+        }
+        
+        .company-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .info-item {
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .info-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+            color: white;
+            padding: 5rem 2rem;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-section h2::after {
+            background: white;
+        }
+        
+        .cta-text {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+        
+        .app-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .app-button {
+            padding: 1rem 2.5rem;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .app-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+        
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .disclaimer {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 900px;
+            border-radius: 10px;
+        }
+        
+        .disclaimer-title {
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+        
+        .disclaimer-text {
+            color: #856404;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.3rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .problem-grid,
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <div class="logo">LITTERA</div>
+            <div class="tagline">大切な想いを、確実に未来へ</div>
+            <a href="#about" class="cta-button">サービスについて</a>
+        </div>
+        <div class="scroll-indicator">
+            <div style="font-size: 2rem;">↓</div>
+        </div>
+    </div>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>LITTERAとは</h2>
+            <div class="about-content">
+                <p>
+                    LITTERAは、あなたの大切な想いを未来へ届けるアプリです。<br>
+                    日々のメッセージや手紙を作成し、生前に設定した宛先と条件に基づいて、<br>
+                    あなたが立ち会えない未来に自動的に送付します。
+                </p>
+                <p style="margin-top: 2rem;">
+                    突然の出来事に備え、伝えたい想いを確実に届ける。<br>
+                    それがLITTERAの使命です。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="problems">
+        <div class="container">
+            <h2>こんなお悩みはありませんか？</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>💭 想いを伝える機会</h3>
+                    <p>自分が立ち会えない未来において、大切な人へ想いを伝える手段がない</p>
+                </div>
+                <div class="problem-card">
+                    <h3>⚠️ 突発的な事態への備え</h3>
+                    <p>突然の事故や病気の際に、重要な情報や想いを伝え損ねる不安</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🔒 確実な送付手段</h3>
+                    <p>SNSや既存のメモアプリでは実現できない「確実に未来へ届ける」仕組み</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>主な機能</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✉️</div>
+                    <h3>メッセージ作成</h3>
+                    <p>大切な人へのメッセージを自由に作成し、宛先を設定できます</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>整理機能</h3>
+                    <p>カテゴリやカレンダーで、メッセージを分かりやすく管理</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💚</div>
+                    <h3>生存確認機能</h3>
+                    <p>定期的な通知と状況確認者による対応で、確実な送付を実現</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>安全な送付</h3>
+                    <p>設定した条件を満たした時のみ送付。途中での閲覧や譲渡は不可</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="users">
+        <div class="container">
+            <h2>すべての世代の方へ</h2>
+            <div class="user-text">
+                LITTERAは年齢を問わず、すべての方にご利用いただけます。<br>
+                死や事故に備えて、大切な人に想いを託したいと考えるすべての人のために。
+            </div>
+            <div class="age-range">
+                <div class="age-badge">10代</div>
+                <div class="age-badge">20〜40代</div>
+                <div class="age-badge">50〜70代</div>
+                <div class="age-badge">80代〜</div>
+            </div>
+            <div class="disclaimer">
+                <div class="disclaimer-title">⚠️ 重要なお知らせ</div>
+                <div class="disclaimer-text">
+                    LITTERAは法的効力を持つ遺言書ではありません。遺産分割などの法的手続きにはご利用いただけませんので、あらかじめご了承ください。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="company">
+        <div class="container">
+            <h2>会社情報（設立準備中）
+            </h2>
+            <div class="company-info">
+                <div class="info-item">
+                    <div class="info-label">会社名</div>
+                    <div class="info-value">株式会社LITTERA（予定）</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">代表者</div>
+                    <div class="info-value">前川 佑作</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">所在地</div>
+                    <div class="info-value">東京都（予定）</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">資本金</div>
+                    <div class="info-value">500万円</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">資本準備金</div>
+                    <div class="info-value">500万円</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">合計出資額</div>
+                    <div class="info-value">1,000万円</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>アプリ公開予定</h2>
+            <div class="cta-text">
+                iOS・Android版、近日リリース予定<br>
+                大切な想いを、未来へ届けませんか？
+            </div>
+            <div class="app-buttons">
+                <a href="#" class="app-button">
+                    <span style="font-size: 1.5rem;">🍎</span>
+                    App Store（準備中）
+                </a>
+                <a href="#" class="app-button">
+                    <span style="font-size: 1.5rem;">📱</span>
+                    Google Play（準備中）
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 LITTERA（リテラ） All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.cta-button').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.problem-card, .feature-card, .info-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
