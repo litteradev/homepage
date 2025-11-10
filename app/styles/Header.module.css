@@ -1,0 +1,221 @@
+/* 全体のヘッダー */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+
+  /* グラデーション適用 */
+  background: linear-gradient(
+    0deg,
+    #f7c499 0%,
+    #f9d7a2 10%,
+    #f9d7a2 19%,
+    #f9e2b3 67%,
+    #f6edd2 100%
+  );
+
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+    "Yu Gothic", sans-serif;
+}
+
+/* 中身の横並びレイアウト */
+.inner {
+  width: 100%;
+  margin: 0;
+  padding: 0 24px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ロゴまわり */
+.logoArea {
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  display: block;
+  height: auto;
+}
+
+/* PCナビ */
+.nav {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.navItem {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  text-decoration: none;
+  color: #5a3b23;
+}
+
+.navDivider {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  color: #b68351;
+  font-size: 14px;
+}
+
+.navItem:hover {
+  opacity: 0.8;
+}
+
+/* PCストアボタン */
+.storeButtons {
+  display: flex;
+  gap: 12px;
+}
+
+/* 画像バッジが入る a タグ */
+.storeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* バッジ画像 */
+.storeBadge {
+  display: block;
+  height: auto;
+}
+
+.storeButton:hover {
+  opacity: 0.9;
+}
+
+/* モバイル用メニューボタン（デフォルトは非表示） */
+.menuButton {
+  display: none;
+  padding: 0;
+  margin: 0;
+  width: 32px;
+  height: 24px;
+
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menuButton span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #5a3b23;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* 開いたときのハンバーガー変形（簡易版） */
+.menuButtonActive span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menuButtonActive span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuButtonActive span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* モバイルメニュー（初期状態は非表示） */
+.mobileMenu {
+  display: none;
+}
+
+/* ───────────────
+   モバイル用スタイル
+   ─────────────── */
+@media (max-width: 768px) {
+  .inner {
+    padding: 0 16px;
+    height: 56px;
+  }
+
+  /* PC用ナビ＆ボタンを隠す */
+  .nav,
+  .storeButtons {
+    display: none;
+  }
+
+  /* モバイル用メニューボタンを出す */
+  .menuButton {
+    display: flex;
+  }
+
+  /* モバイルメニュー本体 */
+  .mobileMenu {
+    position: fixed;
+    top: 56px; /* ヘッダー高さと合わせる */
+    left: 0;
+    right: 0;
+
+    background-color: #ffd8aa;
+    padding: 16px 24px 24px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .mobileMenuOpen {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 16px;
+  }
+
+  .mobileNavItem {
+    text-decoration: none;
+    color: #5a3b23;
+  }
+
+  .mobileNavItem:active {
+    opacity: 0.7;
+  }
+
+  .mobileStoreButtons {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mobileStoreButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+  }
+
+  .mobileStoreBadge {
+    display: block;
+    height: auto;
+  }
+}
