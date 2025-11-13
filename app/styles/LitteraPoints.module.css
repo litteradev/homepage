@@ -1,0 +1,120 @@
+.section {
+  padding: 80px 16px 96px;
+  background-color: #ffffff;
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* タイトル */
+
+.titleWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 56px;
+}
+
+.titleBg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 60px;
+  background-image: url("/images/points/points-section-title-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.titleJa {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #8c5b16; /* デザインのゴールド寄りの文字イメージ */
+}
+
+/* カード一覧 */
+
+.pointsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+}
+
+/* カード本体 */
+
+.pointCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* メイン画像（写真 or フロー図） */
+
+.mainImageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 240px; /* 画像が大きくなりすぎないように調整 */
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 0 auto 16px;
+}
+
+.mainImage {
+  object-fit: cover;
+}
+
+/* 見出し */
+
+.pointTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #8c5b16;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* 説明テキスト画像 */
+
+.textImageWrapper {
+  width: 100%;
+  max-width: 260px;
+}
+
+.textImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* レスポンシブ */
+
+@media (max-width: 1024px) {
+  .pointsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mainImageWrapper {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 56px 16px 72px;
+  }
+
+  .pointsGrid {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+
+  .titleBg {
+    padding: 16px 40px;
+  }
+
+  .titleJa {
+    font-size: 20px;
+  }
+}
