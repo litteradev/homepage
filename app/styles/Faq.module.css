@@ -1,0 +1,198 @@
+/* app/styles/Faq.module.css */
+
+.faqPage {
+  background: #f8f4ef; /* 全体の薄いベージュ背景 */
+  min-height: 100vh;
+  padding: 48px 0 80px;
+}
+
+.inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* フィルターエリア */
+.filterArea {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.searchBox {
+  flex: 1;
+}
+
+.searchInput {
+  width: 100%;
+  border-radius: 999px;
+  border: none;
+  padding: 12px 20px;
+  font-size: 14px;
+  background-color: #eeeeee;
+  outline: none;
+}
+
+.categorySelectWrapper {
+  width: 200px;
+}
+
+.categorySelect {
+  width: 100%;
+  border-radius: 999px;
+  border: none;
+  padding: 12px 16px;
+  font-size: 14px;
+  background-color: #eeeeee;
+  outline: none;
+}
+
+/* FAQリスト */
+.list {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.03);
+  padding: 24px 24px 8px;
+}
+
+.item + .item {
+  border-top: 1px solid #e5e5e5;
+  margin-top: 24px;
+  padding-top: 24px;
+}
+
+.itemTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.metaRow {
+  margin-bottom: 8px;
+}
+
+.categoryTag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #f7b46a;
+  color: #ffffff;
+}
+
+.body {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #555555;
+}
+
+/* ページネーション */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-top: 32px;
+}
+
+.pageButton {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.pageButton:hover {
+  border-color: #e0a86c;
+}
+
+.current {
+  border-color: #e0a86c;
+  text-decoration: underline;
+}
+
+.disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pageSeparator {
+  font-size: 13px;
+  padding: 0 4px;
+}
+
+/* ================================
+   ページネーション
+================================ */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+/* ボタン共通 */
+.pageButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #333;
+  text-decoration: none; /* aタグ用 */
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pageButton:hover {
+  background: #f5f5f5;
+}
+
+/* 現在のページ */
+.current {
+  background: #f28b3a;
+  color: #fff;
+  border-color: #f28b3a;
+  font-weight: 600;
+}
+
+/* 無効時（必要なら） */
+.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* 絞り込みボタン */
+.filterButton {
+  padding: 8px 16px;
+  margin-left: 12px;
+  border-radius: 4px;
+  border: none;
+  background: #f28b3a;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.filterButton:hover {
+  opacity: 0.9;
+}
