@@ -1,10 +1,10 @@
 // libs/microcmsClient.ts
 
 export type News = {
-  content(content: any): import("react").ReactNode;
   id: string;
   title: string;
-  body: string;
+  body?: string;
+  content?: string;
   publishedAt?: string;
   createdAt: string;
   updatedAt: string;
