@@ -29,6 +29,15 @@
   inset: 0;
 }
 
+.desktopImage,
+.mobileImage {
+  object-fit: cover;
+}
+
+.mobileImage {
+  display: none;
+}
+
 .overlayContent {
   position: absolute;
   inset: 0;
@@ -108,9 +117,25 @@
 
 /* スマホ向け調整 */
 @media (max-width: 768px) {
+  .slider {
+    /* モバイル写真の縦長比率に合わせる */
+    aspect-ratio: 482 / 691;
+  }
+
+  .desktopImage {
+    display: none;
+  }
+
+  .mobileImage {
+    display: block;
+    object-fit: contain;
+    background-color: #f8f8f8;
+  }
+
   .overlayContent {
-    padding: 0 6% 4%;
+    padding: 0 6% 18%;
     align-items: flex-start;
+    justify-content: flex-end;
   }
 
   .textOverlay {
@@ -132,6 +157,6 @@
 
 @media (max-width: 480px) {
   .overlayContent {
-    padding: 0 5%;
+    padding: 0 5% 20%;
   }
 }

@@ -6,6 +6,7 @@ import styles from "../styles/TopSlide.module.css";
 
 type Slide = {
   src: string;
+  mobileSrc: string;
   alt: string;
   title: string;
   text: string;
@@ -19,6 +20,7 @@ const sharedText =
 const slides: Slide[] = [
   {
     src: "/images/top-hero-main.png",
+    mobileSrc: "/images/top-hero-mobile-woman.png",
     alt: "未来に届く手紙サービス Littera を使う女性",
     title: sharedTitle,
     text: sharedText,
@@ -26,6 +28,7 @@ const slides: Slide[] = [
   },
   {
     src: "/images/top-hero-young-man.png",
+    mobileSrc: "/images/top-hero-mobile-man.png",
     alt: "Littera を使う若い男性",
     title: sharedTitle,
     text: sharedText,
@@ -33,6 +36,7 @@ const slides: Slide[] = [
   },
   {
     src: "/images/top-hero-senior-woman.png",
+    mobileSrc: "/images/top-hero-mobile-senior.png",
     alt: "Littera を使うシニア女性",
     title: sharedTitle,
     text: sharedText,
@@ -66,6 +70,15 @@ export const TopSlide: React.FC = () => {
                 fill
                 sizes="100vw"
                 priority={i === 0}
+                className={styles.desktopImage}
+              />
+              <Image
+                src={slide.mobileSrc}
+                alt={slide.alt}
+                fill
+                sizes="100vw"
+                priority={i === 0}
+                className={styles.mobileImage}
               />
             </div>
             <div className={styles.overlayContent}>
