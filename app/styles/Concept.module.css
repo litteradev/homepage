@@ -1,0 +1,141 @@
+.page {
+  background-color: #ffffff;
+}
+
+/* ─ Hero ─ */
+
+.heroSection {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 60px 20px 40px;
+}
+
+.heroImageWrapper {
+  position: relative;
+  width: 100%;
+  /* 画像の縦横比をスクショに近い感じに */
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
+.heroCredit {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #888888;
+  text-align: right;
+}
+
+/* ─ Concept Text ─ */
+
+.textSection {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 32px 40px 96px;
+}
+
+.textInner {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 15px;
+  color: #5b4a3b;
+  line-height: 2.4;
+  letter-spacing: 0.05em;
+}
+
+.textParagraph {
+  margin: 0;
+}
+
+.textParagraph + .textParagraph {
+  margin-top: 1.8em;
+}
+
+/* ─ Profile ─ */
+
+.profileSection {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 120px 140px;
+}
+
+.profileInner {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.profileIconWrapper {
+  flex-shrink: 0;
+  margin-top: 6px; /* テキストと縦位置を揃える微調整 */
+}
+
+.profileIcon {
+  border-radius: 999px;
+}
+
+.profileText {
+  flex: 1;
+  font-size: 13px;
+  line-height: 1.9;
+  color: #333333;
+}
+
+.profileRole {
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.profileName {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.profileBody + .profileBody {
+  margin-top: 0.7em;
+}
+
+/* ─ SP レイアウト ─ */
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 40px 16px 32px;
+  }
+
+  .textSection {
+    padding: 16px 24px 72px;
+  }
+
+  .profileSection {
+    padding: 0 20px 96px;
+  }
+
+  .profileInner {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+
+  .profileIconWrapper {
+    margin-top: 0;
+  }
+
+  .profileText {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .textSection {
+    padding: 8px 16px 56px;
+  }
+
+  .profileText {
+    font-size: 12px;
+  }
+}
