@@ -1,7 +1,7 @@
 // app/faq/page.tsx
 
 import styles from "../styles/Faq.module.css";
-import { getFaqList } from "../libs/microcmsClient";
+import { getFaqList, type Faq } from "../libs/microcmsClient";
 import { FaqCategorySelect } from "../components/FaqCategorySelect";
 
 export const revalidate = 60; // ISR
@@ -36,23 +36,21 @@ export default async function FaqPage(props: PageProps) {
   // 全カテゴリ一覧（重複削除）
   const allCategories = Array.from(
     new Set(
-      faqs.flatMap((faq: any) =>
-        Array.isArray(faq.category) ? faq.category : []
-      )
+      faqs.flatMap((faq) => (Array.isArray(faq.category) ? faq.category : []))
     )
   );
 
   // ① カテゴリ絞り込み
   const afterCategoryFilter = selectedCategory
     ? faqs.filter(
-        (faq: any) =>
+        (faq) =>
           Array.isArray(faq.category) && faq.category.includes(selectedCategory)
       )
     : faqs;
 
   // ② キーワード検索（タイトル or 本文）
   const afterKeywordFilter = keyword
-    ? afterCategoryFilter.filter((faq: any) => {
+    ? afterCategoryFilter.filter((faq) => {
         const lower = keyword.toLowerCase();
         const title = (faq.title ?? "").toLowerCase();
         const bodyText = extractTextFromHtml(faq.body ?? "").toLowerCase();
@@ -122,7 +120,7 @@ export default async function FaqPage(props: PageProps) {
 
         {/* FAQ リスト（ページ分のみ） */}
         <section className={styles.list}>
-          {paginatedFaqs.map((faq: any) => {
+          {paginatedFaqs.map((faq: Faq) => {
             const primaryCategory =
               faq.category && faq.category.length > 0
                 ? faq.category[0]

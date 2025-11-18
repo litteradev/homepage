@@ -72,6 +72,9 @@ export const Footer: React.FC = () => {
           <Link href="/privacy" className={styles.navItem}>
             プライバシーポリシー
           </Link>
+          <Link href="/contact" className={styles.navItem}>
+            お問い合わせ
+          </Link>
         </nav>
       </div>
     </footer>
