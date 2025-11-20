@@ -6,6 +6,8 @@ import { Footer } from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Littera",
+  description:
+    "LITTERAは、年齢を問わずすべての方がご利用いただける、想いを大切な人に託すためのメッセージサービスです。死や事故など万が一に備え、あなたの気持ちを安心して届けることができます。",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
