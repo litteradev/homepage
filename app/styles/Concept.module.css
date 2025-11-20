@@ -1,6 +1,7 @@
 .page {
   background-color: #ffffff;
 }
+/* .page, .textSection, .textInner, .textParagraph, .title は共通化のため削除 */
 
 /* ─ Hero ─ */
 

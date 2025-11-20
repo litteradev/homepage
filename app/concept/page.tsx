@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ConceptPage() {
   return (
-    <main className={styles.page}>
+    <main>
       {/* メインビジュアル */}
       <section className={styles.heroSection}>
         <div className={styles.heroImageWrapper}>
@@ -26,9 +26,10 @@ export default function ConceptPage() {
       </section>
 
       {/* コンセプトテキスト */}
-      <section className={styles.textSection}>
-        <div className={styles.textInner}>
-          <p className={styles.textParagraph}>
+      <section className="section">
+        <div>
+          <h1 className="pageTitle" style={{marginTop: 0}}>Litteraの想い</h1>
+          <p className="lead">
             Litteraは、すべての人の大切な想いの伝え漏れを防ぎ、残された人の喪失感を少しでも癒す機会を提供することで、人とのつながりという人生の至上の喜びに一層の潤いをもたらすことを目的としたサービスです。
           </p>
           <p className={styles.textParagraph}>
@@ -50,7 +51,7 @@ export default function ConceptPage() {
       </section>
 
       {/* 代表メッセージ／プロフィール */}
-      <section className={styles.profileSection}>
+      <section className={`section ${styles.profileSection}`}>
         <div className={styles.profileInner}>
           <div className={styles.profileIconWrapper}>
             <Image

@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 export default function CompanyPage() {
   return (
-    <main className={styles.page}>
-      <section className={styles.section}>
-        <h1 className={styles.title}>会社概要</h1>
+    <main>
+      <section className="section">
+        <h1 className="pageTitle">会社概要</h1>
 
         <div className={styles.table}>
           <div className={styles.row}>

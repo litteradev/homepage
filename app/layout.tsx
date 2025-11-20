@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./styles/Layout.module.css";
 import type { Metadata } from "next";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
@@ -26,7 +27,9 @@ export default function RootLayout({
     <html lang="ja">
       <body>
         <Header />
-        {children}
+        <div className="layoutContainer">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

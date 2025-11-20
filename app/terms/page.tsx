@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <main className={styles.page}>
-      <section className={styles.section}>
-        <h1 className={styles.title}>ご利用規約</h1>
+    <main>
+      <section className="section">
+        <h1 className="pageTitle">ご利用規約</h1>
       </section>
     </main>
   );
