@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main>
-      <section className="section">
-        <h1 className="pageTitle">プライバシーポリシー</h1>
+    <main className={styles.page}>
+      <section className={styles.section}>
+        <h1 className={styles.title}>プライバシーポリシー</h1>
       </section>
     </main>
   );

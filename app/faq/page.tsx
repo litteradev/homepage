@@ -86,9 +86,9 @@ export default async function FaqPage(props: PageProps) {
   };
 
   return (
-    <main>
-      <section className="section">
-        <h1 className="pageTitle">よくある質問</h1>
+    <main className={styles.faqPage}>
+      <div className={styles.inner}>
+        <h1 className={styles.title}>よくある質問</h1>
 
         {/* 検索＆カテゴリ */}
         <div className={styles.filterArea}>
@@ -132,7 +132,7 @@ export default async function FaqPage(props: PageProps) {
                   <span className={styles.categoryTag}>{primaryCategory}</span>
                 </div>
 
-                <h2 className="sectionTitle">{faq.title}</h2>
+                <h2 className={styles.itemTitle}>{faq.title}</h2>
 
                 <div
                   className={styles.body}
@@ -171,7 +171,7 @@ export default async function FaqPage(props: PageProps) {
             })}
           </nav>
         )}
-      </section>
+      </div>
     </main>
   );
 }

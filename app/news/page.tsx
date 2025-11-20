@@ -59,9 +59,9 @@ export default async function NewsPage(props: PageProps) {
   );
 
   return (
-    <main>
-      <section className="section">
-        <h1 className="pageTitle">お知らせ</h1>
+    <main className={styles.wrapper}>
+      <div className={styles.inner}>
+        <h1 className={styles.heading}>お知らせ</h1>
 
         {paginatedContents.length === 0 ? (
           <p className={styles.empty}>現在、お知らせはありません。</p>
@@ -77,7 +77,7 @@ export default async function NewsPage(props: PageProps) {
                       <p className={styles.date}>
                         {formatDate(displayDate)}
                       </p>
-                      <h2 className="sectionTitle">{item.title}</h2>
+                      <h2 className={styles.itemTitle}>{item.title}</h2>
                       <p className={styles.excerpt}>
                         {createExcerpt(item.content ?? "")}
                       </p>
@@ -113,7 +113,7 @@ export default async function NewsPage(props: PageProps) {
             )}
           </>
         )}
-      </section>
+      </div>
     </main>
   );
 }

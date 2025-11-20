@@ -1,6 +1,22 @@
 /* app/styles/NewsList.module.css */
 
-/* .wrapper, .inner, .heading は共通化のため削除 */
+.wrapper {
+  padding: 60px 0 80px;
+  background-color: #fff;
+}
+
+.inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.heading {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+}
 
 .empty {
   text-align: center;

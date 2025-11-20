@@ -1,6 +1,21 @@
 /* app/styles/Contact.module.css */
 
-/* .contactPage, .inner, .title は共通化のため削除 */
+.contactPage {
+  padding: 80px 16px 120px;
+}
+
+.inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* タイトル */
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+}
 
 /* 注意・メッセージ（バリデーション用） */
 .notice {
