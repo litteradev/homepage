@@ -79,7 +79,7 @@ export default async function NewsPage(props: PageProps) {
                       </p>
                       <h2 className={styles.itemTitle}>{item.title}</h2>
                       <p className={styles.excerpt}>
-                        {createExcerpt(item.content)}
+                        {createExcerpt(item.content ?? "")}
                       </p>
                       <p className={styles.more}>もっと見る &gt;</p>
                     </Link>
