@@ -2,8 +2,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY!);
-
 type ContactRequestBody = {
   lastName: string;
   firstName: string;
@@ -15,14 +13,22 @@ type ContactRequestBody = {
 
 export async function POST(req: Request) {
   try {
-    // 環境変数チェック
-    if (!process.env.RESEND_API_KEY) {
+    const RESEND_API_KEY = process.env.RESEND_API_KEY;
+
+    // ---- API Key チェック（ビルドではなく実行時に引っかかるようにする）----
+    if (!RESEND_API_KEY) {
       console.error("RESEND_API_KEY が設定されていません");
       return NextResponse.json(
-        { ok: false, error: "メール送信設定が未設定です。（RESEND_API_KEY）" },
+        {
+          ok: false,
+          error: "メール送信設定が未設定です。（RESEND_API_KEY）",
+        },
         { status: 500 }
       );
     }
+
+    // ★ インスタンスはここで生成（ビルド時に実行されない）
+    const resend = new Resend(RESEND_API_KEY);
 
     const body = (await req.json()) as ContactRequestBody;
     const { lastName, firstName, email, subject, message, agreePrivacy } = body;
@@ -77,7 +83,9 @@ export async function POST(req: Request) {
       return NextResponse.json(
         {
           ok: false,
-          error: `管理者宛てメールの送信に失敗しました: ${adminError.message ?? ""}`,
+          error: `管理者宛てメールの送信に失敗しました: ${
+            adminError.message ?? ""
+          }`,
         },
         { status: 500 }
       );
@@ -85,7 +93,7 @@ export async function POST(req: Request) {
 
     console.log("[CONTACT_ADMIN_MAIL_SENT]", adminData);
 
-    // ---- 自動返信（ユーザー宛て） ----
+    // ---- 自動返信（ユーザー宛て）----
     const { data: userData, error: userError } = await resend.emails.send({
       from,
       to: email,
@@ -108,11 +116,12 @@ export async function POST(req: Request) {
 
     if (userError) {
       console.error("[CONTACT_USER_MAIL_ERROR]", userError);
-      // 自動返信だけ失敗した場合でも管理者には届いているので 500 だがメッセージ分ける
       return NextResponse.json(
         {
           ok: false,
-          error: `自動返信メールの送信に失敗しました: ${userError.message ?? ""}`,
+          error: `自動返信メールの送信に失敗しました: ${
+            userError.message ?? ""
+          }`,
         },
         { status: 500 }
       );
@@ -126,7 +135,8 @@ export async function POST(req: Request) {
     return NextResponse.json(
       {
         ok: false,
-        error: "サーバーエラーが発生しました。時間をおいて再度お試しください。",
+        error:
+          "サーバーエラーが発生しました。時間をおいて再度お試しください。",
       },
       { status: 500 }
     );
