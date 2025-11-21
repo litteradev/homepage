@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { NewsPageFrame } from "./components/NewsPageFrame";
 
 
 export const metadata: Metadata = {
@@ -25,9 +26,12 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <Header />
-        {children}
-        <Footer />
+        {/* ニュース系ページのみ縦方向flexでフッターを最下部に寄せる */}
+        <NewsPageFrame>
+          <Header />
+          {children}
+          <Footer />
+        </NewsPageFrame>
       </body>
     </html>
   );

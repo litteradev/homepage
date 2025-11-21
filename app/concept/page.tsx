@@ -52,16 +52,6 @@ export default function ConceptPage() {
       {/* 代表メッセージ／プロフィール */}
       <section className={styles.profileSection}>
         <div className={styles.profileInner}>
-          <div className={styles.profileIconWrapper}>
-            <Image
-              src="/images/concept-avatar.png"
-              alt="代表者アイコン"
-              width={96}
-              height={96}
-              className={styles.profileIcon}
-            />
-          </div>
-
           <div className={styles.profileText}>
             <p className={styles.profileRole}>代表取締役社長</p>
             <p className={styles.profileName}>前川 佑作</p>
