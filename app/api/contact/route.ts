@@ -56,7 +56,7 @@ export async function POST(req: Request) {
 
     const from =
       process.env.CONTACT_FROM_EMAIL ||
-      "Littera お問い合わせ <onboarding@resend.dev>";
+      "Littera お問い合わせ <no-reply@litteraapp.com>";
     const adminTo =
       process.env.CONTACT_TO_EMAIL || "your-admin-address@example.com";
 
