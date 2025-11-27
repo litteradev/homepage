@@ -52,12 +52,17 @@
 
 .imageArea {
   flex: 0 0 180px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image {
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
 }
 
 @media (max-width: 768px) {
