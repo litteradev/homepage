@@ -22,7 +22,6 @@ export default function ConceptPage() {
             priority
           />
         </div>
-        <p className={styles.heroCredit}>pixta.jp – 24012682</p>
       </section>
 
       {/* コンセプトテキスト */}
