@@ -20,7 +20,7 @@ export default function CompanyPage() {
 
           <div className={styles.row}>
             <div className={styles.label}>設立</div>
-            <div className={styles.value}>令和7年10月28日</div>
+            <div className={styles.value}>2025年10月28日</div>
           </div>
 
           <div className={styles.row}>
