@@ -14,8 +14,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Maintain existing colors for dark mode */
+    --background: #ffffff; /* Keep the light background */
+    --foreground: #171717; /* Keep the dark text */
   }
 }
 
