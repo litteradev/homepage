@@ -120,7 +120,7 @@
 @media (max-width: 768px) {
   .slider {
     /* ▼ モバイルも高さを低く（例: 482 / 500 に変更） */
-    aspect-ratio: 482 / 500; /* 旧: 482 / 691 → かなり低くなる */
+    aspect-ratio: 482 / 691; /* 旧: 482 / 691 → かなり低くなる */
   }
 
   .desktopImage {
