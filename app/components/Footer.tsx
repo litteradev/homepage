@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
         {/* ストアバッジ */}
         <div className={styles.storeButtons}>
           <a
-            href="#"
+            href="https://apps.apple.com/app/id6756093697"
             className={styles.storeButton}
             aria-label="App Store からダウンロード"
           >
@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
             />
           </a>
           <a
-            href="#"
+            href="https://play.google.com/store/apps/details?id=com.litteraapp.littera"
             className={styles.storeButton}
             aria-label="Google Play で手に入れよう"
           >

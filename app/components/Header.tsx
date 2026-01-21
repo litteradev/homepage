@@ -53,7 +53,7 @@ export const Header: React.FC = () => {
         {/* PC ストアバッジ */}
         <div className={styles.storeButtons}>
           <a
-            href="#"
+            href="https://apps.apple.com/app/id6756093697"
             className={styles.storeButton}
             aria-label="App Store からダウンロード"
           >
@@ -66,7 +66,7 @@ export const Header: React.FC = () => {
             />
           </a>
           <a
-            href="#"
+            href="https://play.google.com/store/apps/details?id=com.litteraapp.littera"
             className={styles.storeButton}
             aria-label="Google Play で手に入れよう"
           >
@@ -118,7 +118,7 @@ export const Header: React.FC = () => {
         {/* モバイル版ストアバッジ */}
         <div className={styles.mobileStoreButtons}>
           <a
-            href="#"
+            href="https://apps.apple.com/app/id6756093697"
             className={styles.mobileStoreButton}
             aria-label="App Store からダウンロード"
             onClick={closeMenu}
@@ -132,7 +132,7 @@ export const Header: React.FC = () => {
             />
           </a>
           <a
-            href="#"
+            href="https://play.google.com/store/apps/details?id=com.litteraapp.littera"
             className={styles.mobileStoreButton}
             aria-label="Google Play で手に入れよう"
             onClick={closeMenu}
