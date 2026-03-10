@@ -122,13 +122,18 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
           {/* メールアドレス */}
           <div className={styles.formGroup}>
             <label className={styles.srOnly}>メールアドレス</label>
+            <label className={styles.fieldLabel} htmlFor="email">
+              メールアドレス<span className={styles.requiredMark}>*</span>
+            </label>
             <input
+              id="email"
               type="email"
               placeholder="メールアドレス"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className={styles.input}
               aria-label="メールアドレス"
+              required
             />
           </div>
 
@@ -148,12 +153,17 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
           {/* 本文 */}
           <div className={styles.formGroup}>
             <label className={styles.srOnly}>本文</label>
+            <label className={styles.fieldLabel} htmlFor="message">
+              本文<span className={styles.requiredMark}>*</span>
+            </label>
             <textarea
+              id="message"
               placeholder="本文"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               className={styles.textarea}
               aria-label="本文"
+              required
             />
           </div>
 
