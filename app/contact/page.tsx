@@ -87,23 +87,33 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
             <label className={styles.srOnly}>氏名</label>
             <div className={styles.nameRow}>
               <div className={styles.nameCol}>
+                <label className={styles.fieldLabel} htmlFor="lastName">
+                  姓<span className={styles.requiredMark}>*</span>
+                </label>
                 <input
+                  id="lastName"
                   type="text"
                   placeholder="姓"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                   className={styles.input}
                   aria-label="姓"
+                  required
                 />
               </div>
               <div className={styles.nameCol}>
+                <label className={styles.fieldLabel} htmlFor="firstName">
+                  名<span className={styles.requiredMark}>*</span>
+                </label>
                 <input
+                  id="firstName"
                   type="text"
                   placeholder="名"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   className={styles.input}
                   aria-label="名"
+                  required
                 />
               </div>
             </div>

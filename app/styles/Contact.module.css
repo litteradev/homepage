@@ -57,6 +57,18 @@
   flex: 1;
 }
 
+.fieldLabel {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #5f4b3a;
+}
+
+.requiredMark {
+  margin-left: 2px;
+  color: #d00;
+}
+
 /* 共通の入力フィールド */
 .input,
 .textarea {
