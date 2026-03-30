@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
         <div className={styles.iconArea}>
           <Image
             src="/images/footer-icon.png"
-            alt="Littera アイコン"
+            alt=""
             width={100}
             height={100}
             className={styles.iconImage}

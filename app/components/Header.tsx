@@ -23,10 +23,10 @@ export const Header: React.FC = () => {
       <div className={styles.inner}>
         {/* ロゴ（画像版） */}
         <div className={styles.logoArea}>
-          <Link href="/">
+          <Link href="/" aria-label="Littera ホーム">
             <Image
               src="/images/littera-logo.png"
-              alt="Littera ロゴ"
+              alt=""
               width={140}
               height={38}
               className={styles.logoImage}
