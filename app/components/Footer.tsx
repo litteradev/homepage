@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
         {/* ストアバッジ */}
         <div className={styles.storeButtons}>
           <a
-            href="https://apps.apple.com/app/id6756093697"
+            href="https://apps.apple.com/jp/app/id6756093697"
             className={styles.storeButton}
             aria-label="App Store からダウンロード"
           >

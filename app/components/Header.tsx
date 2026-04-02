@@ -53,7 +53,7 @@ export const Header: React.FC = () => {
         {/* PC ストアバッジ */}
         <div className={styles.storeButtons}>
           <a
-            href="https://apps.apple.com/app/id6756093697"
+            href="https://apps.apple.com/jp/app/id6756093697"
             className={styles.storeButton}
             aria-label="App Store からダウンロード"
           >
@@ -118,7 +118,7 @@ export const Header: React.FC = () => {
         {/* モバイル版ストアバッジ */}
         <div className={styles.mobileStoreButtons}>
           <a
-            href="https://apps.apple.com/app/id6756093697"
+            href="https://apps.apple.com/jp/app/id6756093697"
             className={styles.mobileStoreButton}
             aria-label="App Store からダウンロード"
             onClick={closeMenu}
