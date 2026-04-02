@@ -85,7 +85,7 @@ export const LitteraPoints: React.FC = () => {
             </div>
           </article>
 
-          {/* 4. 確実に届く安心設計 */}
+          {/* 4. 想いを託せる安心設計 */}
           <article className={styles.pointCard}>
             <div className={styles.mainImageWrapper}>
               <Image
@@ -96,7 +96,7 @@ export const LitteraPoints: React.FC = () => {
                 className={styles.mainImage}
               />
             </div>
-            <h3 className={styles.pointTitle}>確実に届く安心設計</h3>
+            <h3 className={styles.pointTitle}>想いを託せる安心設計</h3>
             <div className={styles.textImageWrapper}>
               <Image
                 src="/images/points/points-safe-flow-text.png"
