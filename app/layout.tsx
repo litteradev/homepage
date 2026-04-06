@@ -6,9 +6,22 @@ import { NewsPageFrame } from "./components/NewsPageFrame";
 
 
 export const metadata: Metadata = {
-  title: "Littera",
+  title: "littera-未来に届ける手紙アプリ",
   description:
-    "LITTERAは、年齢を問わずすべての方がご利用いただける、想いを大切な人に託すためのメッセージサービスです。死や事故など万が一に備え、あなたの気持ちを安心して届けることができます。",
+    "littera-未来に届ける手紙アプリ。大切な人への想いを未来に届けるための手紙アプリです。もしもの時や未来の特定の日に、あなたの気持ちを安心して届けることができます。",
+  openGraph: {
+    title: "littera-未来に届ける手紙アプリ",
+    description:
+      "littera-未来に届ける手紙アプリ。大切な人への想いを未来に届けるための手紙アプリです。もしもの時や未来の特定の日に、あなたの気持ちを安心して届けることができます。",
+    locale: "ja_JP",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "littera-未来に届ける手紙アプリ",
+    description:
+      "littera-未来に届ける手紙アプリ。大切な人への想いを未来に届けるための手紙アプリです。もしもの時や未来の特定の日に、あなたの気持ちを安心して届けることができます。",
+  },
   icons: {
     icon: [
       { url: "/images/favicon/favicon-16.png", sizes: "16x16" },

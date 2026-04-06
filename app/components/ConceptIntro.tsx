@@ -11,7 +11,7 @@ export const ConceptIntro: React.FC = () => {
         {/* テキストエリア */}
         <div className={styles.textArea}>
           <h2 className={styles.title}>
-            Littera（リテラ）は、大切な人への想いを未来に届けるための“手紙アプリ”です。
+            littera-未来に届ける手紙アプリ
           </h2>
           <p className={styles.description}>
             日々の出来事や伝えたい気持ちを文章に残し、<br />
