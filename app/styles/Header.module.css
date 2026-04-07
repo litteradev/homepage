@@ -101,35 +101,40 @@
   padding: 0;
   margin: 0;
   width: 32px;
-  height: 24px;
+  height: 32px;
+  position: relative;
 
   border: none;
   background: none;
   cursor: pointer;
 
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
 }
 
-.menuButton span {
+.menuIcon {
+  position: absolute;
   display: block;
-  width: 100%;
-  height: 2px;
-  background-color: #5a3b23;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
-/* 開いたときのハンバーガー変形（簡易版） */
-.menuButtonActive span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+.hamburgerIcon {
+  stroke: #5a3b23;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  opacity: 1;
 }
 
-.menuButtonActive span:nth-child(2) {
+.closeIcon {
   opacity: 0;
 }
 
-.menuButtonActive span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+.menuButtonActive .hamburgerIcon {
+  opacity: 0;
+}
+
+.menuButtonActive .closeIcon {
+  opacity: 1;
 }
 
 /* モバイルメニュー（初期状態は非表示） */

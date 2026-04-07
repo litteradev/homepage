@@ -90,9 +90,25 @@ export const Header: React.FC = () => {
           aria-expanded={isOpen}
           onClick={toggleMenu}
         >
-          <span />
-          <span />
-          <span />
+          <svg
+            className={`${styles.menuIcon} ${styles.hamburgerIcon}`}
+            width="32"
+            height="24"
+            viewBox="0 0 32 24"
+            aria-hidden="true"
+          >
+            <line x1="2" y1="4" x2="30" y2="4" />
+            <line x1="2" y1="12" x2="30" y2="12" />
+            <line x1="2" y1="20" x2="30" y2="20" />
+          </svg>
+          <Image
+            src="/images/close_24dp_1F1F1F.svg"
+            alt=""
+            width={32}
+            height={32}
+            className={`${styles.menuIcon} ${styles.closeIcon}`}
+            aria-hidden="true"
+          />
         </button>
       </div>
 
