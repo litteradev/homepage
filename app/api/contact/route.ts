@@ -52,6 +52,7 @@ export async function POST(req: Request) {
     }
 
     const fullName = `${lastName || ""} ${firstName || ""}`.trim() || "お名前未入力";
+    const fullNameForUser = `${lastName || ""}${firstName || ""}`.trim() || "お名前未入力";
     const safeSubject = subject?.trim() || "件名なし";
 
     const from =
@@ -99,7 +100,7 @@ export async function POST(req: Request) {
       to: email,
       subject: "【Littera】お問い合わせありがとうございます",
       text: [
-        `${fullName}様`,
+        `${fullNameForUser}様`,
         "",
         "この度は Littera へお問い合わせいただきありがとうございます。",
         "内容を確認のうえ、担当よりご連絡させていただきます。",
