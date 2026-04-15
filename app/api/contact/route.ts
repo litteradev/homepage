@@ -99,7 +99,7 @@ export async function POST(req: Request) {
       to: email,
       subject: "【Littera】お問い合わせありがとうございます",
       text: [
-        `${fullName} 様`,
+        `${fullName}様`,
         "",
         "この度は Littera へお問い合わせいただきありがとうございます。",
         "内容を確認のうえ、担当よりご連絡させていただきます。",
@@ -110,7 +110,7 @@ export async function POST(req: Request) {
         message,
         "",
         "----------------------------",
-        "Littera 運営",
+        "Littera 運営事務局",
       ].join("\n"),
     });
 
